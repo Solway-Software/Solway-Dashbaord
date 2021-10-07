@@ -1,7 +1,8 @@
 # solway_dashboard
 
 This Responsive dashboard is a template used for show various details and beautiful base project for your dashboards...
-the dashboard is created using Flutter and it is fullynResponsive Dashboard.
+
+the dashboard is created using Flutter and it is fully Responsive Dashboard.
 
 ### Cintain below:
 - Mobile, Tbalet, MiniDesktop and Desktop Sizes.
