@@ -46,7 +46,7 @@ run this command
 
 
 ## Contact Us below 
-developed with ♡ ♥ by Solway Software Team 
+developed with ♥ by  ♡Solway Software♡ Team 
 - info@solway.com
 - mahammadbakr77@gmail.com
 - +964 750 228 9291
