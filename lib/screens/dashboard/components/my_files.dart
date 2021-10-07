@@ -44,7 +44,10 @@ class MyFiles extends StatelessWidget {
           ),
           tablet: FileInfoCardGridView(),
           desktop: FileInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.4,
+            childAspectRatio: _size.width  > 1400 ? 1.4 : 1.3,
+          ),
+          miniDesktop: FileInfoCardGridView(
+            childAspectRatio: _size.width  < 1400 ? 1.1 : 1.4,
           ),
         ),
       ],

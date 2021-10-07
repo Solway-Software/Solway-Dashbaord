@@ -44,7 +44,10 @@ class MyFiles extends StatelessWidget {
           ),
           tablet: FileInfoCardGridView(),
           desktop: FileInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.4,
+            childAspectRatio: _size.width > 1400 ? 1.4 : 1.3,
+          ),
+          miniDesktop: FileInfoCardGridView(
+            childAspectRatio: _size.width < 1400 ? 1.1 : 1.4
           ),
         ),
       ],
@@ -74,7 +77,8 @@ class FileInfoCardGridView extends StatelessWidget {
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles(context)[index]),
+      itemBuilder: (context, index) =>
+          FileInfoCard(info: demoMyFiles(context)[index]),
     );
   }
 }

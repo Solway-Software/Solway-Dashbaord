@@ -5,8 +5,8 @@ ThemeData colorTheme(BuildContext context) => Theme.of(context);
 TextTheme textTheme(BuildContext context) => Theme.of(context).textTheme;
 
 class AppThemePallete {
-  static const primaryColor =  Color(0xFF2697FF);
-  static const primaryDarkColor =  Color(0xFF2697FF);
+  static const primaryColor =  Color(0xFFeac50f);
+  static const primaryDarkColor =  Color(0xFFeac50f);
   static const accentColor = const Color(0xFF95b6db);
   static const accentDarkColor = const Color(0xFF2A2D3E);
   static const bgColor = const Color(0xFFe6e9ed);
