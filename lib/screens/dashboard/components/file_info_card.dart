@@ -1,5 +1,5 @@
 import 'package:solway_dashboard/Utilities/themeOf.dart';
-import 'package:solway_dashboard/models/MyFiles.dart';
+import 'package:solway_dashboard/models/my_files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,7 +16,7 @@ class FileInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
+      padding: EdgeInsets.all(Constants.defaultPadding),
       decoration: BoxDecoration(
         color: theme(context).accentColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -29,7 +29,7 @@ class FileInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.all(defaultPadding * 0.75),
+                padding: EdgeInsets.all(Constants.defaultPadding * 0.75),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(

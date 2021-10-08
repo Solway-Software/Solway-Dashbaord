@@ -1,7 +1,7 @@
 
 import 'package:solway_dashboard/helpers/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:solway_dashboard/models/MyFiles.dart';
+import 'package:solway_dashboard/models/my_files.dart';
 import '../../../constants.dart';
 import 'file_info_card.dart';
 
@@ -25,9 +25,9 @@ class MyFiles extends StatelessWidget {
             ElevatedButton.icon(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(
-                  horizontal: defaultPadding * 1.5,
+                  horizontal: Constants.defaultPadding * 1.5,
                   vertical:
-                      defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+                      Constants.defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
                 ),
               ),
               onPressed: () {},
@@ -36,7 +36,7 @@ class MyFiles extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: defaultPadding),
+        SizedBox(height: Constants.defaultPadding),
         Responsive(
           mobile: FileInfoCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 4,
@@ -73,8 +73,8 @@ class FileInfoCardGridView extends StatelessWidget {
       itemCount: demoMyFiles(context).length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        crossAxisSpacing: defaultPadding,
-        mainAxisSpacing: defaultPadding,
+        crossAxisSpacing: Constants.defaultPadding,
+        mainAxisSpacing: Constants.defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
       itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles(context)[index]),

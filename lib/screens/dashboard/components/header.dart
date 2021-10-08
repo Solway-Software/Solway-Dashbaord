@@ -1,5 +1,5 @@
 import 'package:solway_dashboard/Utilities/themeOf.dart';
-import 'package:solway_dashboard/controllers/MenuController.dart';
+import 'package:solway_dashboard/controllers/menu_controller.dart';
 import 'package:solway_dashboard/helpers/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -43,10 +43,10 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: defaultPadding),
+      margin: EdgeInsets.only(left: Constants.defaultPadding),
       padding: EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
+        horizontal: Constants.defaultPadding,
+        vertical: Constants.defaultPadding / 2,
       ),
       decoration: BoxDecoration(
         color: theme(context).accentColor,
@@ -62,7 +62,7 @@ class ProfileCard extends StatelessWidget {
           if (!Responsive.isMobile(context))
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+                  const EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
               child: Text("Solway Test"),
             ),
           Icon(Icons.keyboard_arrow_down),
@@ -91,8 +91,8 @@ class SearchField extends StatelessWidget {
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.all(defaultPadding * 0.75),
-            margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            padding: EdgeInsets.all(Constants.defaultPadding * 0.75),
+            margin: EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
             decoration: BoxDecoration(
               color: theme(context).primaryColor,
               borderRadius: const BorderRadius.all(Radius.circular(10)),

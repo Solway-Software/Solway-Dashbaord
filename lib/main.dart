@@ -1,6 +1,7 @@
 import 'package:solway_dashboard/Utilities/themeOf.dart';
 import 'package:solway_dashboard/constants.dart';
-import 'package:solway_dashboard/controllers/MenuController.dart';
+import 'package:solway_dashboard/controllers/menu_controller.dart';
+import 'package:solway_dashboard/helpers/Language.dart';
 import 'package:solway_dashboard/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,18 +17,30 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Solway Dashboard',
-      theme: AppThemePallete.darkTheme,
-      // theme: AppThemePallete.lightTheme,
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => MenuController(),
-          ),
-        ],
-        child: MainScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MenuController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Language(),
+        ),
+      ],
+      child: MaterialApp(
+        builder: (context, child) {
+          return Consumer<Language>(
+            builder: (_, language, __) => Directionality(
+                textDirection: language.languageDirection == 'rtl'
+                    ? TextDirection.rtl
+                    : TextDirection.ltr,
+                child: child!),
+          );
+        },
+        debugShowCheckedModeBanner: false,
+        title: 'Solway Dashboard',
+        theme: AppThemePallete.darkTheme,
+        // theme: AppThemePallete.lightTheme,
+        home: MainScreen(),
       ),
     );
   }

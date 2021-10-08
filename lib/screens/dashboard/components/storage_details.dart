@@ -13,7 +13,7 @@ class StarageDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
+      padding: EdgeInsets.all(Constants.defaultPadding),
       decoration: BoxDecoration(
         color: theme(context).accentColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -28,7 +28,7 @@ class StarageDetails extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: defaultPadding),
+          SizedBox(height: Constants.defaultPadding),
           Chart(),
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",

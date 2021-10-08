@@ -1,5 +1,5 @@
 import 'package:solway_dashboard/Utilities/themeOf.dart';
-import 'package:solway_dashboard/models/RecentFile.dart';
+import 'package:solway_dashboard/models/recent_file.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,7 +14,7 @@ class RecentFiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
+      padding: EdgeInsets.all(Constants.defaultPadding),
       decoration: BoxDecoration(
         color: theme(context).accentColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -29,7 +29,7 @@ class RecentFiles extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: DataTable2(
-              columnSpacing: defaultPadding,
+              columnSpacing: Constants.defaultPadding,
               minWidth: 600,
               columns: [
                 DataColumn(
@@ -66,7 +66,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
               width: 30,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+              padding: const EdgeInsets.symmetric(horizontal: Constants.defaultPadding),
               child: Text(fileInfo.title!),
             ),
           ],

@@ -13,11 +13,11 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(defaultPadding),
+        padding: EdgeInsets.all(Constants.defaultPadding),
         child: Column(
           children: [
             Header(),
-            SizedBox(height: defaultPadding),
+            SizedBox(height: Constants.defaultPadding),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,16 +26,16 @@ class DashboardScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       MyFiles(),
-                      SizedBox(height: defaultPadding),
+                      SizedBox(height: Constants.defaultPadding),
                       RecentFiles(),
                       if (Responsive.isMobile(context))
-                        SizedBox(height: defaultPadding),
+                        SizedBox(height: Constants.defaultPadding),
                       if (Responsive.isMobile(context)) StarageDetails(),
                     ],
                   ),
                 ),
                 if (!Responsive.isMobile(context))
-                  SizedBox(width: defaultPadding),
+                  SizedBox(width: Constants.defaultPadding),
                 // On Mobile means if the screen is less than 850 we dont want to show it
                 if (!Responsive.isMobile(context))
                   Expanded(
