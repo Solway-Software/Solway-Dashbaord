@@ -1,1 +1,1 @@
-export 'themeOf.dart';
+export 'theme_of.dart';

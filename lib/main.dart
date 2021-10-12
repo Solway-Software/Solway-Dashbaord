@@ -1,4 +1,4 @@
-import 'package:solway_dashboard/Utilities/themeOf.dart';
+import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:solway_dashboard/constants.dart';
 import 'package:solway_dashboard/controllers/menu_controller.dart';
 import 'package:solway_dashboard/helpers/Language.dart';

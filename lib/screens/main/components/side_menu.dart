@@ -1,5 +1,5 @@
 import 'package:provider/provider.dart';
-import 'package:solway_dashboard/Utilities/ThemeOf.dart';
+import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:solway_dashboard/controllers/menu_controller.dart';

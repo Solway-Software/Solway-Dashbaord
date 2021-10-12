@@ -1,26 +1,26 @@
-import 'package:solway_dashboard/Utilities/themeOf.dart';
+import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 
-class StorageInfoCard extends StatelessWidget {
-  const StorageInfoCard({
+class CategoryInfoCard extends StatelessWidget {
+  const CategoryInfoCard({
     Key? key,
     required this.title,
-    required this.svgSrc,
+    required this.image,
     required this.amountOfFiles,
     required this.numOfFiles,
   }) : super(key: key);
 
-  final String title, svgSrc, amountOfFiles;
+  final String title, image, amountOfFiles;
   final int numOfFiles;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: Constants.defaultPadding),
-      padding: EdgeInsets.all(Constants.defaultPadding),
+      margin: const EdgeInsets.only(top: Constants.defaultPadding),
+      padding: const EdgeInsets.all(Constants.defaultPadding),
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: theme(context).primaryColor.withOpacity(0.15)),
         borderRadius: const BorderRadius.all(
@@ -32,7 +32,7 @@ class StorageInfoCard extends StatelessWidget {
           SizedBox(
             height: 20,
             width: 20,
-            child: SvgPicture.asset(svgSrc),
+            child: Image.network(image),
           ),
           Expanded(
             child: Padding(

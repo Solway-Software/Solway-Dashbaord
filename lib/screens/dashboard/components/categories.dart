@@ -1,12 +1,13 @@
-import 'package:solway_dashboard/models/my_files.dart';
+
 import 'package:solway_dashboard/helpers/responsive.dart';
 import 'package:flutter/material.dart';
-
+import 'package:solway_dashboard/models/my_files.dart';
+import 'package:solway_dashboard/models/vendor_plan_model.dart';
 import '../../../constants.dart';
 import 'file_info_card.dart';
 
-class MyFiles extends StatelessWidget {
-  const MyFiles({
+class CategoriesDashboard extends StatelessWidget {
+  const CategoriesDashboard({
     Key? key,
   }) : super(key: key);
 
@@ -19,7 +20,7 @@ class MyFiles extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Test Information",
+              "My Information",
               style: Theme.of(context).textTheme.subtitle1,
             ),
             ElevatedButton.icon(
@@ -31,23 +32,23 @@ class MyFiles extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
-              icon: Icon(Icons.add),
-              label: Text("Add Test"),
+              icon: const Icon(Icons.add),
+              label: const Text(" Test"),
             ),
           ],
         ),
-        SizedBox(height: Constants.defaultPadding),
+        const SizedBox(height: Constants.defaultPadding),
         Responsive(
           mobile: FileInfoCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 4,
-            childAspectRatio: _size.width < 650 && _size.width > 350 ? 1.3 : 1,
+            childAspectRatio: _size.width < 650 ? 1.3 : 1,
           ),
-          tablet: FileInfoCardGridView(),
+          tablet: const FileInfoCardGridView(),
           desktop: FileInfoCardGridView(
-            childAspectRatio: _size.width > 1400 ? 1.4 : 1.3,
+            childAspectRatio: _size.width  > 1400 ? 1.4 : 1.3,
           ),
           miniDesktop: FileInfoCardGridView(
-            childAspectRatio: _size.width < 1400 ? 1.1 : 1.4
+            childAspectRatio: _size.width  < 1400 ? 1.1 : 1.4,
           ),
         ),
       ],
@@ -68,17 +69,16 @@ class FileInfoCardGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: demoMyFiles(context).length,
+      itemCount: demoVenderPlans(context).length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: Constants.defaultPadding,
         mainAxisSpacing: Constants.defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) =>
-          FileInfoCard(info: demoMyFiles(context)[index]),
+      itemBuilder: (context, index) => CategoryInfoCard(plan: demoVenderPlans(context)[index]),
     );
   }
 }

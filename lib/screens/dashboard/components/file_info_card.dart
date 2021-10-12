@@ -1,22 +1,23 @@
-import 'package:solway_dashboard/Utilities/themeOf.dart';
+import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:solway_dashboard/models/my_files.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:solway_dashboard/models/vendor_plan_model.dart';
 
 import '../../../constants.dart';
 
-class FileInfoCard extends StatelessWidget {
-  const FileInfoCard({
+class CategoryInfoCard extends StatelessWidget {
+  const CategoryInfoCard({
     Key? key,
-    required this.info,
+    required this.plan,
   }) : super(key: key);
 
-  final TextInfo info;
+  final VenderPlanModel plan;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(Constants.defaultPadding),
+      padding: const EdgeInsets.all(Constants.defaultPadding),
       decoration: BoxDecoration(
         color: theme(context).accentColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -29,42 +30,42 @@ class FileInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.all(Constants.defaultPadding * 0.75),
+                padding: const EdgeInsets.all(Constants.defaultPadding * 0.75),
                 height: 40,
                 width: 40,
-                decoration: BoxDecoration(
-                  color: info.color!.withOpacity(0.1),
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                child: SvgPicture.asset(
-                  info.svgSrc!,
-                  color: info.color,
+                child: Image.asset(
+                  plan.image,
+                  color: Colors.red,
                 ),
               ),
-              Icon(Icons.more_vert, color: Colors.white54)
+              const Icon(Icons.more_vert, color: Colors.white54)
             ],
           ),
           Text(
-            info.title!,
+            plan.nameEn,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          ProgressLine(
-            color: info.color,
-            percentage: info.percentage,
+          const ProgressLine(
+            color: Colors.red,
+            percentage: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${info.numberOfText} Files",
+                "${plan.limitBids} bids",
                 style: Theme.of(context)
                     .textTheme
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
               Text(
-                info.totalStorage!,
+                plan.price.toString(),
                 style: Theme.of(context)
                     .textTheme
                     .caption!
@@ -97,7 +98,7 @@ class ProgressLine extends StatelessWidget {
           height: 5,
           decoration: BoxDecoration(
             color: color!.withOpacity(0.1),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
           ),
         ),
         LayoutBuilder(
@@ -106,7 +107,7 @@ class ProgressLine extends StatelessWidget {
             height: 5,
             decoration: BoxDecoration(
               color: color,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
           ),
         ),

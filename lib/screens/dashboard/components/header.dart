@@ -1,4 +1,4 @@
-import 'package:solway_dashboard/Utilities/themeOf.dart';
+import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:solway_dashboard/controllers/menu_controller.dart';
 import 'package:solway_dashboard/helpers/responsive.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
       children: [
         if (!Responsive.isDesktop(context))
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: context.read<MenuController>().controlMenu,
           ),
         if (!Responsive.isMobile(context))
@@ -28,8 +28,8 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-        Expanded(child: SearchField()),
-        ProfileCard()
+        const Expanded(child: SearchField()),
+        const ProfileCard()
       ],
     );
   }
@@ -43,8 +43,8 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: Constants.defaultPadding),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.only(left: Constants.defaultPadding),
+      padding: const EdgeInsets.symmetric(
         horizontal: Constants.defaultPadding,
         vertical: Constants.defaultPadding / 2,
       ),
@@ -60,12 +60,12 @@ class ProfileCard extends StatelessWidget {
             height: 38,
           ),
           if (!Responsive.isMobile(context))
-            Padding(
+            const Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
+                  EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
               child: Text("Solway Test"),
             ),
-          Icon(Icons.keyboard_arrow_down),
+          const Icon(Icons.keyboard_arrow_down),
         ],
       ),
     );
@@ -84,15 +84,15 @@ class SearchField extends StatelessWidget {
         hintText: "Search",
         fillColor: theme(context).accentColor,
         filled: true,
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.all(Constants.defaultPadding * 0.75),
-            margin: EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
+            padding: const EdgeInsets.all(Constants.defaultPadding * 0.75),
+            margin: const EdgeInsets.symmetric(horizontal: Constants.defaultPadding / 2),
             decoration: BoxDecoration(
               color: theme(context).primaryColor,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
