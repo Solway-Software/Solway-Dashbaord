@@ -2,6 +2,7 @@ import 'package:provider/provider.dart';
 import 'package:solway_dashboard/Utilities/theme_of.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:solway_dashboard/constants.dart';
 import 'package:solway_dashboard/controllers/menu_controller.dart';
 import 'package:solway_dashboard/helpers/Language.dart';
 import 'package:solway_dashboard/helpers/responsive.dart';
@@ -26,7 +27,7 @@ class SideMenu extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 10),
                     child: SvgPicture.asset(
-                      "assets/images/logo.svg",
+                      Constants.logoSVGImage,
                       color: theme(context).primaryColor,
                     ),
                   ),
@@ -34,7 +35,7 @@ class SideMenu extends StatelessWidget {
               : Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 10, right: 2),
                   child: SvgPicture.asset(
-                    "assets/images/logoIcon.svg",
+                    Constants.logoIconSVGImage,
                     color: theme(context).primaryColor,
                     height: 30,
                   ),
@@ -43,7 +44,10 @@ class SideMenu extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: NavigationTab.values
-                .map((val) => NavigationSelecter(navigation: val,isDrawer: isDrawer,))
+                .map((val) => NavigationSelecter(
+                      navigation: val,
+                      isDrawer: isDrawer,
+                    ))
                 .toList(),
           ),
         ],
@@ -53,7 +57,7 @@ class SideMenu extends StatelessWidget {
 }
 
 class NavigationSelecter extends StatelessWidget {
-  NavigationSelecter({required this.navigation,required this.isDrawer});
+  NavigationSelecter({required this.navigation, required this.isDrawer});
   final NavigationTab navigation;
   final bool isDrawer;
   @override
@@ -93,7 +97,7 @@ class DrawerListTile extends StatelessWidget {
               color: theme(context).hintColor,
               height: 16,
             ),
-            title: Text(words(context)['home']),
+            title: Text(words(context)[title]),
           )
         : Responsive.isDesktop(context)
             ? ListTile(
@@ -104,7 +108,7 @@ class DrawerListTile extends StatelessWidget {
                   color: theme(context).hintColor,
                   height: 16,
                 ),
-                title: Text(words(context)['home']),
+                title: Text(words(context)[title]),
               )
             : ListTile(
                 onTap: press,

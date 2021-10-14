@@ -34,12 +34,27 @@ class Language with ChangeNotifier {
   final Map<String, dynamic> _words = {
     'kr': {
       'home': 'سەرەکی',
+      'dashboard': 'سەرەکی',
+      'test': 'تاقیکردنەوە',
+      'notifications': 'ئاگادارکردنەوەکان',
+      'profile': 'پرۆفایل',
+      'settings': 'ڕێکخستنەکان',
     },
     'en': {
       'home': 'Home',
+      'dashboard': 'Dashboard',
+      'test': 'Test',
+      'notifications': 'Notifications',
+      'profile': 'Profile',
+      'settings': 'Settings',
     },
     'ar': {
       'home': 'الصفحة الرئيسية',
+      'dashboard': 'سەرەکی',
+      'test': 'تاقیکردنەوە',
+      'notifications': 'ئاگادارکردنەوەکان',
+      'profile': 'پرۆفایل',
+      'settings': 'ڕێکخستنەکان',
     },
   };
 }

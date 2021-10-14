@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:solway_dashboard/constants.dart';
-import 'package:solway_dashboard/screens/dashboard/dashboard_screen.dart';
-import 'package:solway_dashboard/screens/notifications/notifications_screen.dart';
-import 'package:solway_dashboard/screens/profile/profile_screen.dart';
-import 'package:solway_dashboard/screens/settings/settings_screen.dart';
-import 'package:solway_dashboard/screens/test/test_screen.dart';
+import 'package:solway_dashboard/screens/home/dashboard/dashboard_screen.dart';
+import 'package:solway_dashboard/screens/home/notifications/notifications_screen.dart';
+import 'package:solway_dashboard/screens/home/profile/profile_screen.dart';
+import 'package:solway_dashboard/screens/home/settings/settings_screen.dart';
+import 'package:solway_dashboard/screens/home/test/test_screen.dart';
 
 enum NavigationTab { dashboard, test, notifications, profile, settings }
 
@@ -19,17 +19,7 @@ class MenuController extends ChangeNotifier {
     }
   }
 
-  // int tabHome = 0;
   NavigationTab _navigationTab = NavigationTab.dashboard;
-
-  // void setHomeTab(int tab) {
-  //   tabHome = tab;
-  //   notifyListeners();
-  // }
-  //
-  // int getHomeTab() {
-  //   return tabHome;
-  // }
 
   void setNavigationTab(NavigationTab navTab) {
     _navigationTab = navTab;
@@ -56,17 +46,17 @@ class MenuController extends ChangeNotifier {
   String getNavigationTitle({required NavigationTab navigation}) {
     switch (navigation) {
       case NavigationTab.dashboard:
-        return 'home';
+        return 'dashboard';
       case NavigationTab.test:
-        return 'home';
+        return 'test';
       case NavigationTab.notifications:
-        return 'home';
+        return 'notifications';
       case NavigationTab.profile:
-        return 'home';
+        return 'profile';
       case NavigationTab.settings:
-        return 'home';
+        return 'settings';
       default:
-        return 'home';
+        return 'dashboard';
     }
   }
 
